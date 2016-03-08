@@ -18,9 +18,9 @@ class Student
 			void read();
 			void display();
 			void pack();
-			void unpack();
+			void unpack(int pos);
 
-}s[100],temp;
+}temp;
 fstream fp;
 int rrn_l[100];
 void search(int rec_no);
@@ -39,6 +39,7 @@ int main()
 				   break;
 			case 2:cout<<"Enter record number to search";
 				   cin>>rec_no;
+				   search(rec_no);
 				   break;
 			default: exit(0);
 		}
@@ -68,15 +69,15 @@ void Student::pack()
 
 void Student::display()
 {
-		cout<<"\nUSN:"<<usn<<"\nName:"<<"\nSem:"<<sem;
+		cout<<"\nUSN:"<<usn<<"\nName:"<<name<<"\nSem:"<<sem<<"\n";
 }
 
-void Student::unpack()
+void Student::unpack(int pos)
 {
-		fp.open("in.txt",ios::in);
-		getline(fp,usn,"|");
-		getline(fp,name,"|");
-		getline(fp,sem,"$");
+		fp.seekg(pos,ios::beg);
+		getline(fp,usn,'|');
+		getline(fp,name,'|');
+		getline(fp,sem,'$');
 		fp.close();
 
 }
@@ -86,8 +87,9 @@ void search(int rec_no)
 		int pos;
 		pos=rrn_l[rec_no];
 		fp.open("in.txt",ios::in);
-		s[pos].unpack();
-		s[pos].display();
+
+		temp.unpack(pos);
+		temp.display();
 
 }
 
