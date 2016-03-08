@@ -19,6 +19,7 @@ class Student
 			void display();
 			void pack();
 			void unpack(int pos);
+			void modify();
 
 }temp;
 fstream fp;
@@ -30,7 +31,7 @@ int main()
 	int ch,rec_no;
 	while(1)
 	{
-		cout<<"1.Insert\n 2.Search\n3.Exit\n Enter your choice";
+		cout<<"1.Insert\n 2.Search & modify \n3.Exit\n Enter your choice";
 		cin>>ch;
 		switch(ch)
 		{
@@ -84,12 +85,27 @@ void Student::unpack(int pos)
 
 void search(int rec_no)
 {
-		int pos;
+		int pos,ch;
 		pos=rrn_l[rec_no];
 		fp.open("in.txt",ios::in);
 
 		temp.unpack(pos);
 		temp.display();
-
+		cout<<"\nDo you want to modify?\n 1. Yes \n 2.No";
+		cin>>ch;
+		if(ch) {
+			temp.modify();
+		}
+		else
+			return ;
 }
 
+void Student::modify()
+{
+			cout<<"Enter the new USN:";
+			cin>>usn;
+			cout<<"Enter the new name:";
+		    cin>>name;
+			cout<<"Enter the new sem:";
+			cin>>sem;
+}
