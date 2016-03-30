@@ -32,7 +32,7 @@ int main()
     int ch;
     while(1)
     {
-        cout<<"\n1.Insert a record\n2.Search and modify a record\n3.Exit\nEnter your choice:"<<endl ";
+        cout<<"\n1.Insert a record\n2.Search and modify a record\n3.Exit\nEnter your choice:"<<endl;
         cin>>ch;
         switch(ch)
         {
@@ -95,7 +95,7 @@ void search()
 	}    
 	if(s_flag==-1)
 	{
-	    cout<<"Record not found.\n"
+	    cout<<"Record not found.\n";
 	    return;
 	}
     cout<<"Record found\n";
@@ -121,12 +121,12 @@ void Student::unpack()
 		getline(fp,seg);			
 }
 
-void student::display()
+void Student::display()
 {
 	cout<<"\nName: "<<name<<"\nUSN: "<<usn<<"\nSem: "<<sem<<endl;
 } 
 
-void student::modify()				
+void Student::modify()				
 {
 	int choice;	
 	while(1)
