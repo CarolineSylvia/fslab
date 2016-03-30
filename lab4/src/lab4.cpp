@@ -1,10 +1,11 @@
 //============================================================================
 // Name        : lab4.cpp
-// Author      : 
+// Author      : caroline
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
+
 #include <iostream>
 #include<fstream>
 #include<string>
@@ -19,8 +20,6 @@ class Student
 			void display();
 			void pack();
 			void unpack(int pos);
-			void modify();
-
 }temp;
 fstream fp;
 int rrn_l[100];
@@ -31,7 +30,7 @@ int main()
 	int ch,rec_no;
 	while(1)
 	{
-		cout<<"1.Insert\n 2.Search & modify \n3.Exit\n Enter your choice";
+		cout<<"1.Insert\n 2.Search using RRN \n3.Exit\n Enter your choice";
 		cin>>ch;
 		switch(ch)
 		{
@@ -80,7 +79,6 @@ void Student::unpack(int pos)
 		getline(fp,name,'|');
 		getline(fp,sem,'$');
 		fp.close();
-
 }
 
 void search(int rec_no)
@@ -91,21 +89,5 @@ void search(int rec_no)
 
 		temp.unpack(pos);
 		temp.display();
-		cout<<"\nDo you want to modify?\n 1. Yes \n 2.No";
-		cin>>ch;
-		if(ch) {
-			temp.modify();
-		}
-		else
-			return ;
-}
-
-void Student::modify()
-{
-			cout<<"Enter the new USN:";
-			cin>>usn;
-			cout<<"Enter the new name:";
-		    cin>>name;
-			cout<<"Enter the new sem:";
-			cin>>sem;
+		return ;
 }
