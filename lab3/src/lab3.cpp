@@ -49,7 +49,7 @@ int main()
 }
 void Student::read()
 {
-    cout<<"\nEnter usn: ";
+    	cout<<"\nEnter usn: ";
 	cin>>usn;
 	cout<<"\nEnter name: ";
 	cin>>name;
@@ -58,14 +58,14 @@ void Student::read()
 }
 void Student::pack()
 {
-    string buf=usn+"|"+name+"|"+sem+"|";
-    fp<<buf<<endl;
+    	string buf=usn+"|"+name+"|"+sem+"|";
+    	fp<<buf<<endl;
 }
 void search()
 {
-    string key;
-    int s_flag=-1,count,m_flag=-1,i=0;
-    cout<<"\nEnter the USN of the student to be found: ";
+    	string key;
+    	int s_flag=-1,count,m_flag=-1,i=0;
+    	cout<<"\nEnter the USN of the student to be found: ";
 	cin>>key;
 	fp.open("in.txt",ios::in);
 	while(fp)                    //unpacks all records in the file and stores in objects
