@@ -18,14 +18,19 @@ char str[30];
 
 int main()
 {
-	int ch;
+	int ch,n,i;
 	cout<<"Enter your choice: 1.String reversal through terminal 2.String reversal through files" <<endl;
 	cin>>ch;
 	switch(ch)
 	{
-		case 1: cout<<"Enter the string:"<<endl;
-		cin>>str;
-		reverse(str);
+		case 1:cout<<"Enter the number of names:";
+		cin>>n;
+		for(i=0;i<n;i++)
+		{
+		    cout<<"Enter the string:"<<endl;
+		    cin>>str;
+		    reverse(str);
+		}
 		break;
 		
 		case 2: fp1.open("input.txt",ios::in);
